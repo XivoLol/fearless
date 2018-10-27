@@ -11,5 +11,6 @@ m.guild.channels.find(c => c.name === "fearless").then(c => { //بـعدين
     c.send("**Welcome To Fèarless Server..**")
     //يـبعت الرسالة
 })
+});
 
 client.login(process.env.BOT_TOKEN);
