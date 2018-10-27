@@ -6,6 +6,7 @@ client.on('ready', () => { //playing
     client.user.setStatus('Online')
 });
 
+client.on('guildMemberAdd',m =>{
 //خـليه يبحث عن الروم بالاول ..
 m.guild.channels.find(c => c.name === "fearless").then(c => { //بـعدين
     c.send("**Welcome To Fèarless Server..**")
