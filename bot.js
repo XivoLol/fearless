@@ -36,7 +36,8 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 });
 
 client.on('guildMemberAdd',m =>{
-m.guild.channels.get("475274187062116355").send('**Welcome To Fèarless Server..**');
+m.guild.channels.find(c => c.name === "fearless").send('**Welcome To Fèarless Server..**');
 });
+
 
 client.login(process.env.BOT_TOKEN);
