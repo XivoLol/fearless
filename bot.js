@@ -1,40 +1,34 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const devs = ["336614900329611264"];
-const adminprefix = ["X"];
+var prefix = 'X';
 client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-
-  if (message.content.startsWith(adminprefix + 'setP')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else
-     if (message.content === (adminprefix + "setL")) {
-    message.guild.leave();
-  } else
-  if (message.content.startsWith(adminprefix + 'setW')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'setL')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else
-  if (message.content.startsWith(adminprefix + 'setS')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith(adminprefix + 'setN')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setA')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
-
+        if (!message.content.startsWith(prefix)) return;
+        var args = message.content.split(' ').slice(1);
+        var argresult = args.join(' ');
+        if (message.author.id !== "336614900329611264") return;
+      
+      if (message.content.startsWith(prefix + 'setstream')) {
+        client.user.setGame(argresult, "https://www.twitch.tv/mrx-dev");
+           console.log('test' + argresult);
+          message.channel.sendMessage(`Streaming: **${argresult}`)
+      }
+      
+      if (message.content.startsWith(prefix + 'setname')) {
+        client.user.setUsername(argresult).then
+            message.channel.sendMessage(`Username Changed To **${argresult}**`)
+        return message.reply("You Can change the username 2 times per hour");
+      }
+      if (message.content.startsWith(prefix + 'setavatar')) {
+        client.user.setAvatar(argresult);
+         message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
+      }
+      if (message.content.startsWith(prefix + 'setgame')) {
+        client.user.setGame(argresult)
+        message.channel.sendMessage(`Game Changed Successfully To **${argresult}**`);
+    
+    
+    }
+      });
 
 
 client.login(process.env.BOT_TOKEN);
