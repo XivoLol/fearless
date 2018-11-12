@@ -1,21 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.on('ready', function(){
-    var ms = 4000 ;
-    var setGame = [`Welcome To Stúning`,`Tags Seller`,`Nitro Seller`];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
-    }, ms);
 
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('guildMemberAdd', member => {
+      if(member.guild.id !== '474567474940084234') return;
+    setTimeout(function() {
+    member.guild.channels.find(r => r.id === '507233340751872001').send('**Welcome To Fèarless Server..**');
+},3000);
+});
+
+client.on('guildMemberAdd', member => {
+      if(member.guild.id !== '459123746117255168') return;
+    setTimeout(function() {
+    member.guild.channels.find(r => r.id === '494383184675602442').send('***"Welcome to Sky Light. " :milky_way: :yellow_heart:***');
+},3000);
 });
 
 
