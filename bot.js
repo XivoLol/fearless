@@ -6,6 +6,27 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
+client.on("ready", () => {
+    client.user.setPresence({
+      status: 'dnd',
+      game: { 
+         type: 0,
+         name: 'Surprise Mother Fucker :) ',
+         details: `I'm : dÁrY - Developer and Programmer`,
+         url: 'http://twitch.tv/Streammingg',
+         state: `إنْ لَمْ تَجِد لكْ حآقدْ إعلمْ أنْك إنسآن فآشِلْ`,
+        application_id: '281376075802476544',
+         assets: {
+            small_image: `366835431037337600`,
+            small_text: ' Take This ! ' ,
+            large_image: `370451271133429760`,
+            large_text: `CODES FOREVER ♥` }
+    
+      }
+        });
+    });
+    
 client.on('guildMemberAdd', member => {
       if(member.guild.id !== '474567474940084234') return;
     setTimeout(function() {
