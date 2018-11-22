@@ -19,7 +19,7 @@ client.on("ready", () => {
         application_id: '336614900329611264',
          assets: {
             small_image: `510580116838023179`,
-            small_text: ' Take This ! ' ,
+            small_text: ' Hi ! ' ,
             large_image: `347379495528824832`,
             large_text: `CODES FOREVER ♥` }
     
