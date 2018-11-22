@@ -16,7 +16,7 @@ client.on("ready", () => {
          details: `I'm : dÁrY - Developer and Programmer`,
          url: 'http://twitch.tv/Streammingg',
          state: `إنْ لَمْ تَجِد لكْ حآقدْ إعلمْ أنْك إنسآن فآشِلْ`,
-        application_id: '281376075802476544',
+        application_id: '336614900329611264',
          assets: {
             small_image: `366835431037337600`,
             small_text: ' Take This ! ' ,
