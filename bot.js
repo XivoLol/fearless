@@ -7,9 +7,9 @@ client.on('ready', () => {
 });
     
 client.on('guildMemberAdd', member => {
-      if(member.guild.id !== '474567474940084234') return;
+      if(member.guild.id !== '47456747494008423') return;
     setTimeout(function() {
-    member.guild.channels.find(r => r.id === '515891018088972290').send('*** Welcome To HamasaT Server.. ***');
+    member.guild.channels.find(r => r.id === '480929688605425694').send('__  Welcome to Versace 𖤐 __');
 },3000);
 });
 
